@@ -1,6 +1,6 @@
 {
-  "name": "NEXUS Agent Environment",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "name": "NEXUS Agent Cloud",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -9,5 +9,5 @@
     }
   },
   "onCreateCommand": "curl -fsSL https://ollama.com/install.sh | sh",
-  "postCreateCommand": "pip3 install aiohttp beautifulsoup4 lxml rich && ollama serve > /dev/null 2>&1 & sleep 5 && ollama pull dolphin3"
+  "postCreateCommand": "pip3 install aiohttp beautifulsoup4 lxml rich && (ollama serve &) && sleep 8 && ollama pull dolphin3 && echo '=== NEXUS READY ===' && ollama list && free -h"
 }
