@@ -123,7 +123,7 @@ else:
     MAX_TOKENS, MAX_ITERS, TOOL_TIMEOUT = 4096, 20, 120
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2:1b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "dolphin3")
 
 # ═══════════════════════════════════════════════════════════════════
 #  SYSTEM PROMPT

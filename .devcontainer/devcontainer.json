@@ -1,0 +1,13 @@
+{
+  "name": "NEXUS Agent Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  },
+  "onCreateCommand": "curl -fsSL https://ollama.com/install.sh | sh",
+  "postCreateCommand": "pip3 install aiohttp beautifulsoup4 lxml rich && ollama serve > /dev/null 2>&1 & sleep 5 && ollama pull dolphin3"
+}
