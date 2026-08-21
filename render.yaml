@@ -11,6 +11,8 @@ services:
         value: dolphin3
       - key: OLLAMA_URL
         value: http://localhost:11434/api/generate
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
     routes:
       - path: /
         matchType: prefix
