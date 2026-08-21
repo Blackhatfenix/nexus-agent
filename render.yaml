@@ -7,12 +7,23 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python3 app.py
     envVars:
-      - key: OLLAMA_MODEL
-        value: dolphin3
-      - key: OLLAMA_URL
-        value: http://localhost:11434/api/generate
-      - key: GROQ_MODEL
-        value: openai/gpt-oss-120b
+      # Provider is configurable in the Render dashboard.
+      # Recommended for Render: an external OpenAI-compatible
+      # open-weight inference endpoint. Do not point this at localhost.
+      - key: NEXUS_PROVIDER
+        value: openai_compatible
+      - key: NEXUS_BASE_URL
+        sync: false
+      - key: NEXUS_MODEL
+        sync: false
+      - key: NEXUS_API_KEY
+        sync: false
+      - key: NEXUS_TEMPERATURE
+        value: "0.7"
+      - key: NEXUS_MAX_TOKENS
+        value: "2048"
+      - key: NEXUS_LLM_TIMEOUT
+        value: "180"
     routes:
       - path: /
         matchType: prefix
