@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 NEXUS — AGI Local Web</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>🧠 NEXUS</h1>
+                <p>v3.0 — AGI Local</p>
+            </div>
+
+            <div class="status-card">
+                <h3>📊 Status</h3>
+                <div id="status-content">
+                    <div class="skeleton"></div>
+                </div>
+            </div>
+
+            <div class="kb-card">
+                <h3>📚 Base de Conhecimento</h3>
+                <div id="kb-count">0 entradas</div>
+                <button onclick="toggleKB()" class="btn-secondary">Ver entradas</button>
+            </div>
+
+            <div class="learning-card">
+                <h3>🔄 Auto-Melhoria</h3>
+                <div id="learning-content">
+                    <div class="skeleton"></div>
+                </div>
+            </div>
+
+            <div class="plugins-card">
+                <h3>🧩 Plugins</h3>
+                <div id="plugins-list">
+                    <div class="skeleton"></div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button onclick="clearMemory()" class="btn-danger">🧹 Limpar Memória</button>
+                <button onclick="toggleTheme()" class="btn-secondary">🌓 Tema</button>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+            <!-- HEADER -->
+            <header class="header">
+                <h2>💬 Chat com NEXUS</h2>
+                <div class="header-actions">
+                    <span id="connection-status" class="status-indicator offline">● Desconectado</span>
+                </div>
+            </header>
+
+            <!-- CHAT -->
+            <div class="chat-container">
+                <div id="messages" class="messages">
+                    <div class="message system">
+                        <div class="message-content">
+                            <strong>🤖 NEXUS:</strong> Olá! Sou o NEXUS, seu agente autônomo. Como posso ajudá-lo?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INPUT -->
+            <div class="input-area">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="user-input" 
+                        placeholder="Digite sua mensagem... (ou /help para ajuda)"
+                        autocomplete="off"
+                    >
+                    <button onclick="sendMessage()" class="btn-primary">📤 Enviar</button>
+                </div>
+                <div class="quick-commands">
+                    <button onclick="quickCommand('/status')" class="quick-btn">Status</button>
+                    <button onclick="quickCommand('/kb')" class="quick-btn">KB</button>
+                    <button onclick="quickCommand('/plugins')" class="quick-btn">Plugins</button>
+                    <button onclick="quickCommand('/help')" class="quick-btn">Help</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- MODAL KB -->
+        <div id="kb-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>📚 Base de Conhecimento</h3>
+                    <button onclick="toggleKB()" class="close">&times;</button>
+                </div>
+                <div id="kb-modal-content" class="modal-body">
+                    <div class="skeleton"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
