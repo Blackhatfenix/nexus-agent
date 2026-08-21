@@ -1,0 +1,17 @@
+[build]
+  command = "pip install -r requirements.txt"
+  functions = "functions"
+  publish = "static"
+
+[env]
+  python_version = "3.11"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/ws/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
