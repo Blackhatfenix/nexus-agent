@@ -1,0 +1,6 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startupsCommand = "python3 app.py"
+restartPolicyMaxRetries = 5

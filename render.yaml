@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: nexus-agent
+    env: python
+    plan: free
+    pythonVersion: 3.11
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 app.py
+    envVars:
+      - key: OLLAMA_MODEL
+        value: dolphin3
+      - key: OLLAMA_URL
+        value: http://localhost:11434/api/generate
+    routes:
+      - path: /
+        matchType: prefix

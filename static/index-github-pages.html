@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 NEXUS — AGI Local Web</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>🧠 NEXUS</h1>
+                <p>v3.0 — AGI Local</p>
+            </div>
+
+            <div class="info-card">
+                <h3>ℹ️ Informações</h3>
+                <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                    <strong>NEXUS Web</strong> é um agente IA local autônomo avançado com suporte a:
+                </p>
+                <ul style="color: var(--text-secondary); font-size: 0.875rem; margin-left: 15px;">
+                    <li>🧠 ReAct Engine</li>
+                    <li>🔍 Busca Web</li>
+                    <li>🐍 Code Interpreter</li>
+                    <li>📚 Base de Conhecimento</li>
+                    <li>🔄 Auto-Melhoria</li>
+                    <li>🧩 Plugin System</li>
+                </ul>
+            </div>
+
+            <div class="setup-card">
+                <h3>⚙️ Setup</h3>
+                <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 10px;">
+                    <strong>Esta é uma demonstração estática.</strong> Para usar a versão completa com backend:
+                </p>
+                <code style="background: var(--bg-light); padding: 8px; border-radius: 4px; display: block; margin: 10px 0; font-size: 0.8rem;">
+# Clone o repositório
+git clone https://github.com/Blackhatfenix/nexus-agent
+cd nexus-agent
+
+# Instale dependências
+pip install -r requirements.txt
+
+# Execute
+python3 app.py
+                </code>
+            </div>
+
+            <div class="links-card">
+                <h3>🔗 Links</h3>
+                <a href="https://github.com/Blackhatfenix/nexus-agent" target="_blank" style="display: block; color: var(--primary); text-decoration: none; margin: 5px 0;">
+                    📦 GitHub
+                </a>
+                <a href="https://github.com/Blackhatfenix/nexus-agent/blob/master/README.md" target="_blank" style="display: block; color: var(--primary); text-decoration: none; margin: 5px 0;">
+                    📖 Documentação
+                </a>
+                <a href="https://github.com/Blackhatfenix/nexus-agent/blob/master/SETUP.md" target="_blank" style="display: block; color: var(--primary); text-decoration: none; margin: 5px 0;">
+                    🚀 Guia Setup
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+            <!-- HEADER -->
+            <header class="header">
+                <h2>ℹ️ NEXUS — Demonstração</h2>
+            </header>
+
+            <!-- CONTENT -->
+            <div class="chat-container">
+                <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+                    <h1 style="color: var(--primary); margin-bottom: 20px;">🧠 Bem-vindo ao NEXUS v3.0</h1>
+                    
+                    <div style="background: var(--bg-light); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                        <h2 style="color: var(--primary); margin-top: 0;">Esta é uma Página Estática</h2>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Você está visualizando uma versão estática do NEXUS hospedada no GitHub Pages.
+                            Para usar a versão completa com backend funcionando, você precisa executar localmente ou
+                            hospedar em um serviço como Render, Railway ou Vercel.
+                        </p>
+                    </div>
+
+                    <h2 style="color: var(--primary);">🚀 Como Usar</h2>
+                    
+                    <h3 style="color: var(--secondary);">1. Localmente (Recomendado)</h3>
+                    <pre style="background: var(--bg-light); padding: 15px; border-radius: 8px; overflow-x: auto;"><code>git clone https://github.com/Blackhatfenix/nexus-agent
+cd nexus-agent
+pip install -r requirements.txt
+python3 app.py
+# Acesse http://localhost:8000</code></pre>
+
+                    <h3 style="color: var(--secondary);">2. Render (Gratuito)</h3>
+                    <ol style="color: var(--text-secondary); line-height: 1.8;">
+                        <li>Vá para <a href="https://render.com" target="_blank" style="color: var(--primary);">render.com</a></li>
+                        <li>Clique "New +" → "Web Service"</li>
+                        <li>Conecte seu repositório GitHub</li>
+                        <li>Configure:
+                            <ul>
+                                <li>Build Command: <code style="background: var(--bg-darker); padding: 2px 6px;">pip install -r requirements.txt</code></li>
+                                <li>Start Command: <code style="background: var(--bg-darker); padding: 2px 6px;">python3 app.py</code></li>
+                            </ul>
+                        </li>
+                        <li>Clique Deploy</li>
+                    </ol>
+
+                    <h3 style="color: var(--secondary);">3. Railway (Gratuito)</h3>
+                    <ol style="color: var(--text-secondary); line-height: 1.8;">
+                        <li>Vá para <a href="https://railway.app" target="_blank" style="color: var(--primary);">railway.app</a></li>
+                        <li>Login com GitHub</li>
+                        <li>"New Project" → "Deploy from GitHub repo"</li>
+                        <li>Selecione nexus-agent</li>
+                        <li>Railway faz tudo automaticamente</li>
+                    </ol>
+
+                    <h3 style="color: var(--secondary);">4. Vercel (Gratuito)</h3>
+                    <ol style="color: var(--text-secondary); line-height: 1.8;">
+                        <li>Vá para <a href="https://vercel.com" target="_blank" style="color: var(--primary);">vercel.com</a></li>
+                        <li>Clique "Add New" → "Project"</li>
+                        <li>Import seu repositório</li>
+                        <li>Vercel detecta automaticamente e faz deploy</li>
+                    </ol>
+
+                    <h2 style="color: var(--primary); margin-top: 30px;">✨ Capacidades</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <strong style="color: var(--primary);">🧠 ReAct Engine</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 5px 0 0 0;">Think → Act → Observe → Repeat</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <strong style="color: var(--primary);">🔍 Busca Web</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 5px 0 0 0;">DuckDuckGo, Bing, Google</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <strong style="color: var(--primary);">🐍 Code Interpreter</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 5px 0 0 0;">Python sandbox seguro</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <strong style="color: var(--primary);">📚 Knowledge Base</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 5px 0 0 0;">Busca semântica TF-IDF</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <strong style="color: var(--primary);">🔄 Auto-Melhoria</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 5px 0 0 0;">Reflexão e aprendizado contínuo</p>
+                        </div>
+                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <strong style="color: var(--primary);">🧩 Plugin System</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 5px 0 0 0;">Extensibilidade dinâmica</p>
+                        </div>
+                    </div>
+
+                    <h2 style="color: var(--primary); margin-top: 30px;">⚙️ LLM Suportados</h2>
+                    <ul style="color: var(--text-secondary); line-height: 1.8;">
+                        <li><strong>Ollama</strong> (Recomendado para offline)</li>
+                        <li><strong>Groq</strong> (Gratuito online - 25k req/dia)</li>
+                        <li><strong>OpenAI</strong> (GPT-4, GPT-4o-mini)</li>
+                        <li><strong>Anthropic</strong> (Claude)</li>
+                    </ul>
+
+                    <h2 style="color: var(--primary); margin-top: 30px;">📞 Suporte</h2>
+                    <ul style="color: var(--text-secondary); line-height: 1.8;">
+                        <li>🐛 <a href="https://github.com/Blackhatfenix/nexus-agent/issues" target="_blank" style="color: var(--primary);">Issues</a></li>
+                        <li>💬 <a href="https://github.com/Blackhatfenix/nexus-agent/discussions" target="_blank" style="color: var(--primary);">Discussions</a></li>
+                        <li>📖 <a href="https://github.com/Blackhatfenix/nexus-agent#readme" target="_blank" style="color: var(--primary);">README</a></li>
+                    </ul>
+
+                    <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 20px; border-radius: 12px; margin-top: 30px; text-align: center;">
+                        <h3 style="margin: 0; color: var(--bg-dark);">Pronto para começar?</h3>
+                        <a href="https://github.com/Blackhatfenix/nexus-agent" target="_blank" style="display: inline-block; margin-top: 10px; padding: 12px 24px; background: var(--bg-dark); color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: bold;">
+                            🚀 Clone Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
