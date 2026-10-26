@@ -69,6 +69,17 @@ export GROQ_API_KEY=gsk_seu_token_aqui
 export OPENAI_API_KEY=sk_seu_token_aqui
 ```
 
+#### Opção D: Venice AI (menos filtros comportamentais)
+
+Crie uma chave em https://venice.ai/settings/api e configure no ambiente do servidor:
+
+```bash
+export VENICE_API_KEY=sua_chave_aqui
+export VENICE_MODEL=venice-uncensored
+```
+
+No Render, adicione `VENICE_API_KEY` em **Environment → Environment Variables** como segredo. `VENICE_MODEL` pode ser alterado para qualquer ID compatível listado na documentação do Venice. Nunca publique a chave no repositório. O NEXUS prioriza Venice quando `VENICE_API_KEY` está definida (depois de verificar Ollama).
+
 ## 🚀 Uso
 
 ### Modo Web (Recomendado)

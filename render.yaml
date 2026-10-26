@@ -13,6 +13,8 @@ services:
         value: http://localhost:11434/api/generate
       - key: GROQ_MODEL
         value: openai/gpt-oss-120b
+      - key: VENICE_MODEL
+        value: venice-uncensored
     routes:
       - path: /
         matchType: prefix

@@ -735,6 +735,13 @@ class LLMEngine:
                             self.available = True; self.provider = "ollama"
                             self.model = models[0]; return True
         except: pass
+        # Verificar Venice (modelos com menos filtros comportamentais)
+        venice_key = os.getenv("VENICE_API_KEY", "")
+        if venice_key:
+            self.available = True
+            self.provider = "venice"
+            self.model = os.getenv("VENICE_MODEL", "venice-uncensored")
+            return True
         # Verificar Groq (gratuito)
         groq_key = os.getenv("GROQ_API_KEY", "")
         if groq_key:
@@ -752,6 +759,8 @@ class LLMEngine:
     async def generate(self, prompt: str, context: str = "") -> str:
         if self.provider == "ollama":
             return await self._ollama_generate(prompt, context)
+        elif self.provider == "venice":
+            return await self._openai_compat_generate(prompt, context, "https://api.venice.ai/api/v1", os.getenv("VENICE_API_KEY",""))
         elif self.provider == "groq":
             return await self._openai_compat_generate(prompt, context, "https://api.groq.com/openai/v1", os.getenv("GROQ_API_KEY",""))
         elif self.provider == "openai":
@@ -775,6 +784,10 @@ class LLMEngine:
         full = f"Contexto:\n{context}\n\n{prompt}" if context else prompt
         messages = [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": full}]
         body = {"model": self.model, "messages": messages, "temperature": 0.7, "max_tokens": MAX_TOKENS}
+        if "api.venice.ai" in base_url:
+            # Venice suporta desativar o prompt padrão do provedor para priorizar
+            # as instruções de personalidade configuradas pelo proprietário do NEXUS.
+            body["venice_parameters"] = {"include_venice_system_prompt": False}
         headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
         async with aiohttp.ClientSession() as s:
             async with s.post(f"{base_url}/chat/completions", json=body, headers=headers,
